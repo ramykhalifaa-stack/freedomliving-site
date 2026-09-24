@@ -45,7 +45,7 @@ const AboutFreedomLivingSection = () => {
             <img  
               className="rounded-lg shadow-xl object-cover h-80 w-full md:w-auto max-w-md" 
               alt="Arched corridor leading to the sea, lit by lanterns, reflecting heritage and timelessness."
-             src="https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/201d3da184be4c1cda1bae798928b9d4.png" />
+             src="/media/201d3da184be4c1cda1bae798928b9d4.png" />
           </div>
         </motion.div>
       </div>

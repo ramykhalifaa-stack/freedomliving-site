@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.dir() === 'rtl';
-  const logoUrl = "https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/a74d0751e17aaa0c4f6f9fb929222cbc.png";
+  const logoUrl = "/media/a74d0751e17aaa0c4f6f9fb929222cbc.png";
   
   return (
     <motion.footer

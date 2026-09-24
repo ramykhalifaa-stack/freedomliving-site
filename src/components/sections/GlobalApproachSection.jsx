@@ -36,7 +36,7 @@ const GlobalApproachSection = () => {
              <img  
                 className="rounded-xl shadow-2xl object-cover w-full h-auto max-h-[450px]" 
                 alt="A montage of traditional Omani fort architecture blended with modern sustainable building designs."
-               src="https://images.unsplash.com/photo-1639836290656-44b588c80492" />
+               src="/media/unsplash-photo-1639836290656-44b588c80492.jpg" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: isRtl ? -50 : 50 }}

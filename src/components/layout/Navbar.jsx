@@ -18,7 +18,7 @@ import React, { useState, useEffect } from 'react';
         { nameKey: 'navConnect', href: '#contact-us' },
       ];
     
-      const logoUrl = "https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/a74d0751e17aaa0c4f6f9fb929222cbc.png";
+      const logoUrl = "/media/a74d0751e17aaa0c4f6f9fb929222cbc.png";
     
       const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
     

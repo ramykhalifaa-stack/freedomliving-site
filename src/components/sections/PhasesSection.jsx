@@ -20,7 +20,7 @@ import React from 'react';
           'phase1Feature8',
         ],
         imageAlt: `Luxurious wellness hotel facade with lush green landscaping and serene water features under a clear blue sky in Shinas, Oman.`,
-        imageUrl: `https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/39de55f994c40c546a1f30172c911e7c.png`,
+        imageUrl: `/media/39de55f994c40c546a1f30172c911e7c.png`,
         phaseIcon: 'Leaf', 
       },
       {
@@ -36,7 +36,7 @@ import React from 'react';
           'phase2Feature7',
         ],
         imageAlt: `Realistic image of a vibrant leisure district with a landmark commercial mall, sports club, and coastal chalets in Shinas, Oman.`,
-        imageUrl: `https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/124eeb700c2ec431fdad41ddd81ffe18.png`,
+        imageUrl: `/media/124eeb700c2ec431fdad41ddd81ffe18.png`,
         phaseIcon: 'Waves',
       },
       {
@@ -52,7 +52,7 @@ import React from 'react';
           'phase3Feature7',
         ],
         imageAlt: `Sophisticated marina with yachts, a modern hospital with healing gardens, and premium waterfront villas at dusk in Shinas, Oman.`,
-        imageUrl: `https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/89097a6ea911f8c07b5391b8962f9bab.png`,
+        imageUrl: `/media/89097a6ea911f8c07b5391b8962f9bab.png`,
         phaseIcon: 'Anchor',
       },
       {
@@ -66,7 +66,7 @@ import React from 'react';
           'phase4Feature5',
         ],
         imageAlt: `Immersive Omani heritage village street with traditional architecture, artisan shops, and palm trees at sunset, leading to ultra-premium villas.`,
-        imageUrl: `https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/ce46b645cb745faabae9f4c0287bade9.png`,
+        imageUrl: `/media/ce46b645cb745faabae9f4c0287bade9.png`,
         phaseIcon: 'Castle',
       },
     ];

@@ -8,7 +8,7 @@ import React from 'react';
       const { t, i18n } = useTranslation();
       const isRtl = i18n.dir() === 'rtl';
     
-      const heroImageUrl = "https://storage.googleapis.com/hostinger-horizons-assets-prod/aa999fe9-745f-4b34-a1b2-ef33bc71246b/f74d3aee315d9340e592d94e3c7124c8.png";
+      const heroImageUrl = "/media/f74d3aee315d9340e592d94e3c7124c8.png";
     
       return (
         <section id="hero" className="relative h-screen flex items-center justify-center text-center overflow-hidden">
