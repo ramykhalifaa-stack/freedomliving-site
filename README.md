@@ -1,29 +1,30 @@
-# freedomliving.ae, local copy
+# freedomliving.ae
 
-Source: the Hostinger AI Builder (Horizons) export `horizons-export-aa999fe9-…ef33bc71246b.zip`
-(5 June 2025). Commit 1 is that export untouched. Commit 2 brings it in line with the live site:
-one leadership title, and the 8 images served from `public/media/` instead of Hostinger storage.
-The share image (`og:image` in `index.html`) still points at Hostinger on purpose, because link
-previews need a full web address.
+A stand-alone React site (built with Vite), set up like the SHE site: no Hostinger AI Builder,
+no server to run. It was first exported from the AI Builder (`git log` shows the untouched
+export as the first commit).
 
-## Run it
+## Run it on the Mac
 
 ```bash
 cd ~/Projects/freedomliving-site
-npm ci                 # first time only
-npm run build && npx vite preview --port 5181   # the site exactly as it would be published
-npm run dev            # editing mode, reloads as you save
+npm ci                                                        # first time only
+npx vite build --mode mac && npx vite preview --port 5181     # the site as published
+npm run dev                                                   # editing mode, reloads on save
 ```
 
-Open http://localhost:5181
+Open http://localhost:5181. On the Mac the contact form saves entries to
+`form-entries-local.jsonl` and emails nothing.
 
-## Behaviour carried over from live, deliberately unchanged
+## Publish
 
-- The contact form shows "Inquiry Sent" but sends nothing anywhere. The WhatsApp button and the
-  email links work.
-- Google Maps, WhatsApp and Google Fonts need an internet connection.
+`./deploy.sh "What changed"`. It builds, copies the site into `docs/` and pushes to GitHub,
+and GitHub Pages serves it. First-time setup, including the form key and the DNS switch, is in
+`GO-LIVE.md`.
 
-## Publishing
+## What changed from the AI Builder version
 
-`npm run build` writes `dist/`. Its contents, including `.htaccess`, are what go into the host's
-`public_html`. Once the code is edited here it can no longer go back into the AI Builder.
+- The AI Builder's editor plugins and the scripts it added to every page are gone.
+- Images are in `public/media/` instead of Hostinger storage.
+- The contact form used to show "Inquiry Sent" and send nothing. It now emails each enquiry
+  through Web3Forms (`src/lib/sendForm.js`), and says "Not sent" if that fails.

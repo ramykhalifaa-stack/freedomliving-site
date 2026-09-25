@@ -9,6 +9,7 @@ import React from 'react';
     import { useToast } from '@/components/ui/use-toast';
     import { useTranslation } from 'react-i18next';
     import { cn } from '@/lib/utils';
+    import { sendForm } from '@/lib/sendForm';
     
     const ContactSection = () => {
       const { toast } = useToast();
@@ -39,20 +40,21 @@ import React from 'react';
         },
       ];
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        const name = formData.get('name');
-        const clientEmail = formData.get('email');
-        const message = formData.get('message');
-        
-        toast({
-          title: t('contactToastTitle'),
-          description: t('contactToastDescription'),
-          duration: 5000,
-        });
-        
-        e.target.reset();
+        const form = e.target;
+        const data = new FormData(form);
+        try {
+          await sendForm('Freedom Living website enquiry', {
+            name: data.get('name'),
+            email: data.get('email'),
+            message: data.get('message'),
+          });
+          toast({ title: t('contactToastTitle'), description: t('contactToastDescription'), duration: 5000 });
+          form.reset();
+        } catch {
+          toast({ variant: 'destructive', title: t('contactErrorTitle'), description: t('contactErrorDescription'), duration: 8000 });
+        }
       };
     
       const whatsappNumber = "971507771990"; 
