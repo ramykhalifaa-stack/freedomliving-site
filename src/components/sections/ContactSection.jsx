@@ -9,7 +9,7 @@ import React from 'react';
     import { useToast } from '@/components/ui/use-toast';
     import { useTranslation } from 'react-i18next';
     import { cn } from '@/lib/utils';
-    import { sendForm } from '@/lib/sendForm';
+    import { sendForm, emailAppToast } from '@/lib/sendForm';
     
     const ContactSection = () => {
       const { toast } = useToast();
@@ -45,13 +45,17 @@ import React from 'react';
         const form = e.target;
         const data = new FormData(form);
         try {
-          await sendForm('Freedom Living website enquiry', {
+          const result = await sendForm('Freedom Living website enquiry', {
             name: data.get('name'),
             email: data.get('email'),
             message: data.get('message'),
           });
-          toast({ title: t('contactToastTitle'), description: t('contactToastDescription'), duration: 5000 });
-          form.reset();
+          if (result === 'email-app') {
+            toast(emailAppToast(i18n.language));
+          } else {
+            toast({ title: t('contactToastTitle'), description: t('contactToastDescription'), duration: 5000 });
+            form.reset();
+          }
         } catch {
           toast({ variant: 'destructive', title: t('contactErrorTitle'), description: t('contactErrorDescription'), duration: 8000 });
         }

@@ -4,10 +4,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-# The forms email through Web3Forms. Without the key they could not send, so refuse to publish.
+# With a Web3Forms key the forms email each entry. Without one they open the visitor's email app.
 if ! grep -qE '^VITE_WEB3FORMS_KEY=.+' .env.production 2>/dev/null; then
-  echo "No VITE_WEB3FORMS_KEY in .env.production (see GO-LIVE.md). Nothing published."
-  exit 1
+  echo "Note: no VITE_WEB3FORMS_KEY in .env.production, so the forms will open the visitor's email app (see GO-LIVE.md)."
 fi
 
 npm run build

@@ -17,7 +17,8 @@ The forms send each entry by email through Web3Forms, a free form-to-email servi
    ```
 
 The key is meant to be public (it ends up in the page), but the file is left out of git anyway.
-`deploy.sh` refuses to publish without it, so the forms can never go live unable to send.
+Until the key is added, the forms open the visitor's own email app with their message filled in,
+addressed to the same inbox. Add the key, run `./deploy.sh "Form key"`, and they send directly.
 
 ## 2. Put the code on GitHub
 
